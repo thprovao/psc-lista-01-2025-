@@ -5,23 +5,37 @@ public class LISTA2_QUESTAO5 {
         // Cria um objeto Scanner para ler a entrada do usuário
         Scanner scanner = new Scanner(System.in);
 
-        // Pede o valor total da viagem
-        System.out.print("Digite o valor total da viagem (Eurotrip): R$ ");
-        double valorViagem = scanner.nextDouble();
+        // Solicita o preço de cada viagem e a quantidade de pessoas para cada destino
+        System.out.print("Digite o preço da viagem para a Alemanha: R$ ");
+        double precoAlemanha = scanner.nextDouble();
+        System.out.print("Digite a quantidade de pessoas que irão para a Alemanha: ");
+        int pessoasAlemanha = scanner.nextInt();
 
-        // Solicita o número de amigos no grupo
-        System.out.print("Digite o número de amigos que vão viajar: ");
-        int numeroDeAmigos = scanner.nextInt();
+        System.out.print("Digite o preço da viagem para Portugal: R$ ");
+        double precoPortugal = scanner.nextDouble();
+        System.out.print("Digite a quantidade de pessoas que irão para Portugal: ");
+        int pessoasPortugal = scanner.nextInt();
 
-        // Calcula o valor que cada amigo vai pagar
-        double valorPorAmigo = valorViagem / numeroDeAmigos;
+        System.out.print("Digite o preço da viagem para a Itália: R$ ");
+        double precoItalia = scanner.nextDouble();
+        System.out.print("Digite a quantidade de pessoas que irão para a Itália: ");
+        int pessoasItalia = scanner.nextInt();
 
-        // Exibe o valor a ser pago por cada amigo
-        System.out.println("\nA Eurotrip será realizada para os seguintes destinos:");
-        System.out.println("1. Alemanha");
-        System.out.println("2. Portugal");
-        System.out.println("3. Itália");
-        System.out.println("\nCada amigo deverá pagar R$ " + valorPorAmigo + " pela viagem.");
+        // Calcula o valor total da viagem para cada destino
+        double totalAlemanha = precoAlemanha * pessoasAlemanha;
+        double totalPortugal = precoPortugal * pessoasPortugal;
+        double totalItalia = precoItalia * pessoasItalia;
+
+        // Calcula o valor total de todas as viagens
+        double valorTotal = totalAlemanha + totalPortugal + totalItalia;
+
+        // Exibe o valor total das viagens
+        System.out.println("\nValor total da viagem para cada destino:");
+        System.out.println("1º Alemanha: R$ " + totalAlemanha);
+        System.out.println("2º Portugal: R$ " + totalPortugal);
+        System.out.println("3º Itália: R$ " + totalItalia);
+
+        System.out.println("\nValor total de todas as viagens: R$ " + valorTotal);
 
         // Fecha o scanner
         scanner.close();
